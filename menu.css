@@ -1,0 +1,323 @@
+:root {
+  --primary-color: #0583F2;
+  --secondary-color: #05AFF2;
+  --accent-color: #05DBF2;
+  --background-color: #4b4b4b;
+  --text-color: #ffffff;
+  --header-background: #000000;
+  --footer-background: #000000;
+  --light-background: #f9f9f9;
+  --input-border-color: #ddd;
+  --input-focus-border-color: #0583F2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Navbar fixa no topo */
+header {
+  background-color: var(--header-background);
+  padding: 20px 0; /* Aumenta o padding para uma navbar maior */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container do menu */
+.menu-container {
+  display: flex;
+  justify-content: space-between; /* Logo à esquerda e o resto centralizado */
+  align-items: center;
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  width: 150px;
+  height: auto;
+  margin-left: 60px;
+}
+
+/* Navbar */
+.nav-bar {
+  display: flex;
+  justify-content: center; /* Centraliza os itens do menu */
+  flex: 1; /* Faz com que a navbar ocupe o máximo de largura disponível */
+}
+
+/* Links do menu */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Aumenta o espaçamento entre os itens do menu */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px; /* Aumenta o tamanho da fonte dos itens do menu */
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+
+/* Espaço extra no conteúdo para não ficar encoberto pela navbar */
+body {
+  padding-top: 70px; /* Ajuste conforme necessário */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .nav-links li {
+      margin: 5px 10px;
+  }
+}
+
+/* Menu Ativo */
+.side-nav.active {
+  right: 0; /* Mostra o menu quando a classe 'active' é adicionada */
+}
+
+main {
+  transition: margin-right 0.3s ease; /* Transição suave para o conteúdo */
+}
+
+/* Estilos das seções */
+.section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  line-height: 1.6; /* Aumenta a altura da linha para melhor legibilidade */
+}
+
+#home {
+  background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YWNhZGVtaWF8ZW58MHx8MHx8fDA%3D') no-repeat center center;
+  background-size: cover;
+  height: 100vh; /* Garante que a imagem ocupe toda a altura da seção */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Efeito de sombra no texto para destacar sobre a imagem */
+}
+
+#home .banner h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+#home .banner p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.btn:focus {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+.bg-light {
+  background-color: var(--light-background);
+}
+
+.planos-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que os planos se movam para a próxima linha em telas menores */
+}
+
+.plano {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 300px; /* Permite que os planos tenham uma largura mínima de 300px */
+  animation: fadeIn 0.5s ease forwards; /* Aplica efeito de fade-in */
+}
+
+.plano:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: var(--footer-background);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px; /* Adiciona margem para separar do conteúdo acima */
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--input-focus-border-color);
+  outline: none; /* Remove qualquer borda de foco */
+}
+
+textarea {
+  height: 150px;
+}
+
+/* Estilos do botão de login */
+.login-btn {
+  font-size: 17px;
+  background: transparent;
+  border: none; /* Certifique-se de que o botão não tenha borda */
+  padding: 1em 1.5em;
+  color: #ffedd3;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.4s ease, transform 0.4s ease;
+  cursor: pointer;
+  outline: none; /* Remove qualquer borda de foco */
+}
+
+.login-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: width 0.5s ease;
+}
+
+.login-btn:hover {
+  color: #1e1e2b;
+  transform: translateY(-5px); /* Adicionando um leve movimento de elevação */
+}
+
+.login-btn:hover::before {
+  width: 100%;
+}
+
+.login-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.login-btn:hover::after {
+  height: 100%;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .side-nav {
+    width: 100%; /* Full width on mobile */
+    right: -100%; /* Hide off-screen */
+  }
+
+  .side-nav.active {
+    right: 0; /* Show when active */
+  }
+
+  .planos-container {
+    flex-direction: column; /* Stack plans vertically */
+    align-items: center; /* Center align */
+  }
+
+  h2 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Smaller paragraph text */
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Cadastro - Academia</title>
+</head>
+<body>
+    <form class="form">
+        <p id="heading">Cadastro</p>
+
+        <!-- Informações Pessoais -->
+        <div class="field">
+            <input placeholder="Nome Completo" class="input-field" type="text" required>
+        </div>
+
+        <div class="field">
+            <input autocomplete="off" placeholder="Email" class="input-field" type="email" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Telefone" class="input-field" type="tel" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Data de Nascimento" class="input-field" type="date" required>
+        </div>
+
+        <div class="field">
+            <select class="input-field" required>
+                <option value="">Selecione o Gênero</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+        </div>
+
+        <!-- Informações de Saúde -->
+        <div class="field">
+            <input placeholder="Peso (kg)" class="input-field" type="number" step="0.1" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Altura (cm)" class="input-field" type="number" step="0.1" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Objetivo Principal" class="input-field" type="text" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Condição Física Atual" class="input-field" type="text" required>
+        </div>
+
+        <div class="field">
+            <input placeholder="Problemas de Saúde/Lesões" class="input-field" type="text">
+        </div>
+
+        <!-- Preferências de Treino -->
+        <div class="field">
+            <select class="input-field" required>
+                <option value="">Preferência de Tipo de Treino</option>
+                <option value="musculacao">Musculação</option>
+                <option value="cardio">Cardio</option>
+                <option value="funcional">Funcional</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Quantos dias por semana deseja treinar?</label>
+            <select class="input-field" required>
+                <option value="">Selecione</option>
+                <option value="1">1 dia</option>
+                <option value="2">2 dias</option>
+                <option value="3">3 dias</option>
+                <option value="4">4 dias</option>
+                <option value="5">5 dias</option>
+                <option value="6">6 dias</option>
+                <option value="7">Todos os dias</option>
+            </select>
+        </div> 
+
+        <!-- Informações de Pagamento -->
+        <div class="field">
+            <select class="input-field" required>
+                <option value="">Plano de Assinatura</option>
+                <option value="mensal">Mensal</option>
+                <option value="anual">Anual</option>
+            </select>
+        </div>
+
+        <!-- Termos de Uso e Autorização -->
+        <div class="field">
+            <label for="termos">
+                <input type="checkbox" id="termos" required> Eu aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a>.
+            </label>
+        </div>
+
+        <div class="btn">
+            <button type="submit" class="button1"> <a href="planos.html">Cadastrar</a></button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Planos de Academia</title>
+    <style>
+        :root {
+            --primary-color: #0583F2;
+            --secondary-color: #0583F2;
+            --accent-color: #0f6d77;
+            --background-color: #4b4b4b;
+            --text-color: #ffffff;
+            --header-background: #000000;
+            --footer-background: #000000;
+            --light-background: #f9f9f9;
+            --input-border-color: #ddd;
+            --input-focus-border-color: #0583F2;
+        }
+
+        body {
+            background-color: var(--light-background);
+        }
+
+        .header {
+            background-color: var(--header-background);
+            color: var(--text-color);
+        }
+
+        .footer {
+            background-color: var(--footer-background);
+            color: var(--text-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .bg-dark {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+        <!-- Plano Básico -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden w-80">
+            <div class="header text-center py-4">
+                <h2 class="text-xl font-bold">Plano Básico</h2>
+            </div>
+            <div class="bg-dark text-center py-4">
+                <h3 class="text-4xl font-bold">R$75,00</h3>
+            </div>
+            <div class="p-6">
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                </ul>
+                <a href="pagamento.html" class="mt-6 w-full btn-primary py-2 rounded text-center block">Assinar</a>
+            </div>
+        </div>
+        <!-- Plano Premium -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden w-80">
+            <div class="header text-center py-4">
+                <h2 class="text-xl font-bold">Plano Completo</h2>
+            </div>
+            <div class="bg-dark text-center py-4">
+                <h3 class="text-4xl font-bold">R$145,00</h3>
+            </div>
+            <div class="p-6">
+                <ul class="space-y-2">
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-check-circle text-accent-color mr-2"></i>
+                        <span>Lorem ipsum dolor</span>
+                    </li>
+                </ul>
+                <a href="pagamento.html" class="mt-6 w-full btn-secondary py-2 rounded text-center block">Assinar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
