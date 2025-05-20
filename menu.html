@@ -1,74 +1,95 @@
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transforme seu corpo com treinos personalizados na Core Fitness.">
-    <title>MD SMART & NUTRIÇÃO - Academia</title>
-    <link rel="stylesheet" href="menu.css"> <!-- Referência ao CSS externo -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Font Awesome for icons -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>MD GYM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"/>
+  <link href="menu.css" rel="stylesheet" />
 </head>
-<body>
-    <!-- Navbar -->
-    <header>
-        <div class="menu-container">
-            <img src="image/logo.png" alt="Logo da Empresa" class="logo" style="width: 75px; height: auto;">
-            <nav class="nav-bar">
-                <ul class="nav-links">
-                    <li><a href="menu.html" title="Voltar para a página inicial">Home</a></li>
-                    <li><a href="#sobre" title="Saiba mais sobre nós">Sobre</a></li>
-                    <li><a href="planos.html" title="Veja nossos planos">Planos</a></li>
-                    <li><a href="treinos_dietas.html" title="Receba treinos e dietas">Treinos e Dietas</a></li>
-                    <li><a href="#contato" title="Entre em contato conosco">Contato</a></li>
-                    <li><a href="login.html" title="Faça o login">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
+<body class="body-bg flex flex-col min-h-screen">
+  <header class="header">
+    <div class="header-logo">
+      <img
+        alt="Blue circular logo with a white checkmark inside representing company logo"
+        class="logo-img"
+        height="32"
+        src="https://storage.googleapis.com/a1aa/image/81756950-5b17-4ab8-3f39-cebff55be1e5.jpg"
+        width="32"/>
+      <span class="logo-text">MD SMART</span>
+    </div>
+    <nav class="nav-desktop">
+      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link" href="#">Sobre</a>
+      <a class="nav-link" href="#">Contato</a>
+      <a class="nav-link" href="planos.html">Planos</a>
+      <a class="nav-link" href="login.html">Login</a>
+      <button aria-label="Search" class="search-btn" type="button">
+        <i class="fas fa-search"></i>
+      </button>
+    </nav>
+    <button id="mobile-menu-button" aria-label="Toggle menu" class="mobile-menu-btn" type="button">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
 
-    <main>
-        <!-- Banner Principal -->
-        <section id="home">
-            <div class="banner">
-                <h1>Transforme Seu Corpo com a MD SMART</h1>
-                <p>Treinos personalizados para todos os objetivos.</p>
-            </div>
-        </section>
+  <nav id="mobile-menu" class="nav-mobile hidden">
+    <a class="nav-link active" href="#">Home</a>
+    <a class="nav-link" href="#">Sobre</a>
+    <a class="nav-link" href="#">Planos</a>
+    <a class="nav-link" href="#">Contato</a>
+    <a class="nav-link" href="#">Login</a>
+    <button aria-label="Search" class="search-btn-mobile" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+  </nav>
 
-        <!-- Sobre -->
-        <section id="sobre" class="section">
-            <div class="container">
-                <h2>Sobre a MD SMART</h2>
-                <p>Na Core Fitness, nossa missão é transformar vidas. Oferecemos treinamentos de alta qualidade, com planos nutricionais e acompanhamento especializado.</p>
-            </div>
-        </section>
+  <main class="main-content">
+    <img
+      alt="Abstract blue and purple wave background with glowing light particles"
+      class="main-image"
+      height="400"
+      src="image/into.jpg"
+      width="1920"/>
 
-        <!-- Contato -->
-        <section id="contato" class="section">
-            <div class="container">
-                <h2>Fale Conosco</h2>
-                <form action="#">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" aria-required="true" required>
+    <div class="text-top-left">
+      Transforme <br/> seu Corpo com a MD SMART
+    </div>
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" aria-required="true" required>
+    <div class="text-bottom-right">
+      Treinos personalizados para todos os objetivos.
+    </div>
 
-                    <label for="mensagem">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" aria-required="true" required></textarea>
+    <div class="center-text">
+      <p class="center-paragraph">
+        Na MD SMART, nossa missão é transformar vidas. Oferecemos treinamentos de alta qualidade, com planos nutricionais e acompanhamento especializado.
+      </p>
+      
+      <h1 class="center-title">M D  S M A R T</h1>
 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-            </div>
-        </section>
-    </main>
+      <button class="center-button">Fale com nossa IA Luni</button>
+    </div>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> MD SMART | Todos os direitos reservados</p>
-    </footer>
+    <button aria-label="Previous" class="btn-prev" type="button">
+      <i class="fas fa-chevron-left"></i>
+    </button>
 
-    <script src="menu.js"></script>
+    <button aria-label="Next" class="btn-next" type="button">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </main> 
+
+  <script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
