@@ -127,3 +127,19 @@ body {
 .register-lik a:hover {
     text-decoration: underline;
 }
+
+.visitor-login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.visitor-login a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.visitor-login a:hover {
+    text-decoration: underline;
+}
