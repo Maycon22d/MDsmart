@@ -1,66 +1,253 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinos e Dietas - Academia</title>
-    <link rel="stylesheet" href="treinos_dietas.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assistente Fitness IA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #e0e0e0;
+    }
+
+    .container {
+      background: rgba(20, 30, 48, 0.9);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      width: 100%;
+      max-width: 550px;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+      color: #00f7ff;
+    }
+
+    .form-step {
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .form-step.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    label {
+      font-weight: bold;
+      color: #b0c4d8;
+      text-shadow: 0 0 2px #00f0ff;
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      border: 1px solid #2a9fd6;
+      border-radius: 8px;
+      background: rgba(0, 10, 20, 0.8);
+      color: #ffffff;
+      font-size: 15px;
+      transition: border 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00f7ff;
+      box-shadow: 0 0 6px #00f7ff;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    button {
+      padding: 14px;
+      flex: 1;
+      background: linear-gradient(145deg, #1e90ff, #00c6ff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(145deg, #00b0ff, #00e0ff);
+      transform: translateY(-2px);
+    }
+
+    .btn-back {
+      background: linear-gradient(145deg, #555, #333);
+    }
+
+    .btn-back:hover {
+      background: linear-gradient(145deg, #777, #444);
+    }
+
+    .error-message {
+      color: #ff6b6b;
+      font-size: 13px;
+      margin-top: 4px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-         <!-- Navbar -->
-        <div class="menu-container">
-            <a href="image/logo.png" class="logo">NutriSync</a>
-            <nav class="nav-bar">
-                <ul class="nav-links">
-                    <li><a href="menu.html" title="Voltar para a página inicial">Home</a></li>
-                    <li><a href="#sobre" title="Saiba mais sobre nós">Sobre</a></li>
-                    <li><a href="planos.html" title="Veja nossos planos">Planos</a></li>
-                    <li><a href="treinos_dietas.html" title="Receba treinos e dietas">Treinos e Dietas</a></li>
-                    <li><a href="#contato" title="Entre em contato conosco">Contato</a></li>
-                    <li><a href="login.html" title="Faça o login">Login</a></li>
-                </ul>
-            </nav>
-        </div>
-</header>
+  <div class="container">
+    <h2>MD SMART</h2>
+    
+    <!-- Etapa 1 -->
+    <div class="form-step active" id="step1">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" />
+      <div class="error-message" id="erro-nome">Campo obrigatório</div>
 
-    <main class="container">
-        <section class="treino-dieta">
-            <div class="box treino">
-                <h2>Treino do Dia</h2>
-                <p><strong>Exercício:</strong> Supino Reto</p>
-                <p><strong>Séries:</strong> 4x12</p>
-                <p><strong>Descanso:</strong> 60 segundos</p>
-                <button class="btn">Ver Todos os Treinos</button>
-            </div>
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" />
+      <div class="error-message" id="erro-idade">Campo obrigatório</div>
 
-            <div class="box dieta">
-                <h2>Dieta Recomendada</h2>
-                <p><strong>Refeição 1:</strong> Omelete de claras e aveia</p>
-                <p><strong>Refeição 2:</strong> Frango grelhado e batata doce</p>
-                <p><strong>Refeição 3:</strong> Shake de proteína</p>
-                <button class="btn">Ver Dieta Completa</button>
-            </div>
-        </section>
+      <label for="peso">Peso (kg):</label>
+      <input type="number" id="peso" step="0.1" />
+      <div class="error-message" id="erro-peso">Campo obrigatório</div>
 
-        <section class="planos">
-            <h2>Explore Nossos Planos</h2>
-            <div class="card-plano">
-                <h3>Plano Mensal</h3>
-                <p>Acesso aos treinos e dietas personalizados por R$ 49,90/mês.</p>
-                <button class="btn">Assinar Agora</button>
-            </div>
+      <label for="altura">Altura (cm):</label>
+      <input type="number" id="altura" />
+      <div class="error-message" id="erro-altura">Campo obrigatório</div>
 
-            <div class="card-plano">
-                <h3>Plano Anual</h3>
-                <p>Aproveite um desconto e tenha acesso por R$ 499,90/ano.</p>
-                <button class="btn">Assinar Agora</button>
-            </div>
-        </section>
-    </main>
+      <div class="btn-group">
+        <button onclick="nextStep(1)">Avançar</button>
+      </div>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 NutriSync - Todos os direitos reservados.</p>
-    </footer>
+    <!-- Etapa 2 -->
+    <div class="form-step" id="step2">
+      <label for="objetivo">Objetivo na academia:</label>
+      <select id="objetivo">
+        <option value="">Selecione</option>
+        <option value="ganhar_massa">Ganhar massa muscular</option>
+        <option value="perder_peso">Perder peso</option>
+        <option value="resistencia">Melhorar resistência</option>
+      </select>
+      <div class="error-message" id="erro-objetivo">Campo obrigatório</div>
+
+      <label for="frequencia">Frequência semanal de treino:</label>
+      <input type="number" id="frequencia" />
+      <div class="error-message" id="erro-frequencia">Campo obrigatório</div>
+
+      <label for="calorias">Meta diária de calorias (kcal):</label>
+      <input type="number" id="calorias" />
+      <div class="error-message" id="erro-calorias">Campo obrigatório</div>
+
+      <div class="btn-group">
+        <button class="btn-back" onclick="prevStep(2)">Voltar</button>
+        <button onclick="nextStep(2)">Avançar</button>
+      </div>
+    </div>
+
+    <!-- Etapa 3 -->
+    <div class="form-step" id="step3">
+      <label for="dificuldade">Alguma dificuldade ou lesão?</label>
+      <textarea id="dificuldade" rows="3"></textarea>
+      <div class="error-message" id="erro-dificuldade">Campo obrigatório</div>
+
+      <label for="restricao">Alimentos que não pode ingerir?</label>
+      <textarea id="restricao" rows="3"></textarea>
+      <div class="error-message" id="erro-restricao">Campo obrigatório</div>
+
+      <div class="btn-group">
+        <button class="btn-back" onclick="prevStep(3)">Voltar</button>
+        <button onclick="enviarFormulario()">Enviar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function nextStep(current) {
+      const currentStep = document.getElementById(`step${current}`);
+      const inputs = currentStep.querySelectorAll("input, select, textarea");
+      let valido = true;
+  
+      inputs.forEach(input => {
+        const erro = document.getElementById(`erro-${input.id}`);
+        if (!input.value.trim()) {
+          erro.style.display = 'block';
+          valido = false;
+        } else {
+          erro.style.display = 'none';
+        }
+      });
+  
+      if (valido) {
+        currentStep.classList.remove('active');
+        document.getElementById(`step${current + 1}`).classList.add('active');
+      }
+    }
+  
+    function prevStep(current) {
+      document.getElementById(`step${current}`).classList.remove('active');
+      document.getElementById(`step${current - 1}`).classList.add('active');
+    }
+  
+    function enviarFormulario() {
+      const step = document.getElementById('step3');
+      const inputs = step.querySelectorAll("textarea");
+      let valido = true;
+  
+      inputs.forEach(input => {
+        const erro = document.getElementById(`erro-${input.id}`);
+        if (!input.value.trim()) {
+          erro.style.display = 'block';
+          valido = false;
+        } else {
+          erro.style.display = 'none';
+        }
+      });
+  
+      if (valido) {
+        const dados = {
+          nome: document.getElementById('nome').value,
+          idade: document.getElementById('idade').value,
+          peso: document.getElementById('peso').value,
+          altura: document.getElementById('altura').value,
+          objetivo: document.getElementById('objetivo').value,
+          frequencia: document.getElementById('frequencia').value,
+          calorias: document.getElementById('calorias').value,
+          dificuldade: document.getElementById('dificuldade').value,
+          restricao: document.getElementById('restricao').value,
+        };
+  
+        console.log("Dados recebidos:", dados);
+        alert("Informações enviadas com sucesso!");
+      }
+    }
+  </script>
+  
 </body>
 </html>
